@@ -14,19 +14,18 @@ object frmPrincipal: TfrmPrincipal
   PixelsPerInch = 96
   TextHeight = 13
   object lblHoraAtual: TLabel
-    Left = 434
-    Top = 152
+    Left = 354
+    Top = 40
     Width = 58
     Height = 13
     Caption = 'lblHoraAtual'
   end
   object pnlComponentes: TPanel
     Tag = 10
-    Left = 40
-    Top = 48
+    Left = 16
+    Top = 24
     Width = 233
-    Height = 321
-    Caption = 'Panel1'
+    Height = 345
     TabOrder = 0
     OnDblClick = pnlComponentesDblClick
     object lblTituloTexto: TLabel
@@ -36,6 +35,13 @@ object frmPrincipal: TfrmPrincipal
       Height = 13
       Caption = 'Texto a ser inserido:'
     end
+    object lblEspelho: TLabel
+      Left = 24
+      Top = 102
+      Width = 47
+      Height = 13
+      Caption = 'lblEspelho'
+    end
     object memTexto: TMemo
       Left = 24
       Top = 176
@@ -44,11 +50,13 @@ object frmPrincipal: TfrmPrincipal
       TabOrder = 0
     end
     object edtTexto: TEdit
-      Left = 24
+      Left = 26
       Top = 75
       Width = 185
       Height = 21
+      Color = clSkyBlue
       TabOrder = 1
+      OnChange = edtTextoChange
     end
     object btnAddTexto: TButton
       Left = 24
@@ -63,7 +71,7 @@ object frmPrincipal: TfrmPrincipal
     end
     object cboOpcoes: TComboBox
       Left = 24
-      Top = 120
+      Top = 136
       Width = 185
       Height = 21
       TabOrder = 3
@@ -83,10 +91,18 @@ object frmPrincipal: TfrmPrincipal
       OnClick = Button1Click
     end
   end
+  object Button2: TButton
+    Left = 320
+    Top = 97
+    Width = 75
+    Height = 25
+    Caption = 'Button2'
+    TabOrder = 1
+  end
   object Timer1: TTimer
     Tag = 10
     OnTimer = Timer1Timer
-    Left = 432
-    Top = 96
+    Left = 296
+    Top = 32
   end
 end

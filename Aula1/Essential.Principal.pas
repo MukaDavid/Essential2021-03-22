@@ -17,10 +17,13 @@ type
     lblTituloTexto: TLabel;
     cboOpcoes: TComboBox;
     Button1: TButton;
+    lblEspelho: TLabel;
+    Button2: TButton;
     procedure pnlComponentesDblClick(Sender: TObject);
     procedure btnAddTextoClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure edtTextoChange(Sender: TObject);
   private
     procedure ExibirAlerta;
     { Private declarations }
@@ -43,6 +46,11 @@ end;
 procedure TfrmPrincipal.Button1Click(Sender: TObject);
 begin
   memTexto.Lines.Add(cboOpcoes.Text);
+end;
+
+procedure TfrmPrincipal.edtTextoChange(Sender: TObject);
+begin
+  lblEspelho.Caption := edtTexto.Text;
 end;
 
 procedure TfrmPrincipal.ExibirAlerta;
