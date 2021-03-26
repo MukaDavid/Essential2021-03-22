@@ -10,8 +10,10 @@ object frmPrincipal: TfrmPrincipal
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  Menu = MainMenu1
   OldCreateOrder = False
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object DBGrid1: TDBGrid
@@ -54,8 +56,8 @@ object frmPrincipal: TfrmPrincipal
     TabOrder = 3
   end
   object Button1: TButton
-    Left = 48
-    Top = 112
+    Left = 470
+    Top = 464
     Width = 75
     Height = 25
     Caption = 'Button1'
@@ -63,17 +65,31 @@ object frmPrincipal: TfrmPrincipal
     OnClick = Button1Click
   end
   object FDTable1: TFDTable
-    Active = True
     IndexFieldNames = 'COUNTRY'
     Connection = dmdConexao.FDConnection1
     UpdateOptions.UpdateTableName = 'COUNTRY'
     TableName = 'COUNTRY'
     Left = 48
-    Top = 280
+    Top = 320
   end
   object DataSource1: TDataSource
     DataSet = FDTable1
     Left = 48
-    Top = 360
+    Top = 384
+  end
+  object MainMenu1: TMainMenu
+    Left = 64
+    Top = 168
+    object Cadastros1: TMenuItem
+      Caption = 'Cadastros'
+      object Cliente1: TMenuItem
+        Caption = 'Cliente'
+        OnClick = Cliente1Click
+      end
+      object Paises1: TMenuItem
+        Caption = 'Paises'
+        OnClick = Paises1Click
+      end
+    end
   end
 end

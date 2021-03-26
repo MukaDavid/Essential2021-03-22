@@ -10,19 +10,19 @@ uses
 
 type
   TdmdCadastroCliente = class(TDataModule)
-    FDQuery1: TFDQuery;
-    FDQuery1CUST_NO: TIntegerField;
-    FDQuery1CUSTOMER: TStringField;
-    FDQuery1CONTACT_FIRST: TStringField;
-    FDQuery1CONTACT_LAST: TStringField;
-    FDQuery1PHONE_NO: TStringField;
-    FDQuery1ADDRESS_LINE1: TStringField;
-    FDQuery1ADDRESS_LINE2: TStringField;
-    FDQuery1CITY: TStringField;
-    FDQuery1STATE_PROVINCE: TStringField;
-    FDQuery1COUNTRY: TStringField;
-    FDQuery1POSTAL_CODE: TStringField;
-    FDQuery1ON_HOLD: TStringField;
+    qryCliente: TFDQuery;
+    qryClienteCUST_NO: TIntegerField;
+    qryClienteCUSTOMER: TStringField;
+    qryClienteCONTACT_FIRST: TStringField;
+    qryClienteCONTACT_LAST: TStringField;
+    qryClientePHONE_NO: TStringField;
+    qryClienteADDRESS_LINE1: TStringField;
+    qryClienteADDRESS_LINE2: TStringField;
+    qryClienteCITY: TStringField;
+    qryClienteSTATE_PROVINCE: TStringField;
+    qryClienteCOUNTRY: TStringField;
+    qryClientePOSTAL_CODE: TStringField;
+    qryClienteON_HOLD: TStringField;
   private
     { Private declarations }
   public

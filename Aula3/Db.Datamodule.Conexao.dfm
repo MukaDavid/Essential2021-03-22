@@ -13,7 +13,7 @@ object dmdConexao: TdmdConexao
       'DriverID=FB')
     Connected = True
     LoginPrompt = False
-    Left = 56
-    Top = 32
+    Left = 40
+    Top = 24
   end
 end

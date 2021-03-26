@@ -81,4 +81,13 @@ object frmMenuPrincipal: TfrmMenuPrincipal
     TabOrder = 6
     OnClick = btnCalcularNovoClick
   end
+  object Button1: TButton
+    Left = 88
+    Top = 272
+    Width = 113
+    Height = 25
+    Caption = 'Calcular e Executar'
+    TabOrder = 7
+    OnClick = Button1Click
+  end
 end

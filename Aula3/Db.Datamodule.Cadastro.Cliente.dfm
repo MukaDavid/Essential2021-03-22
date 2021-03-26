@@ -2,70 +2,69 @@ object dmdCadastroCliente: TdmdCadastroCliente
   OldCreateOrder = False
   Height = 253
   Width = 358
-  object FDQuery1: TFDQuery
-    Active = True
+  object qryCliente: TFDQuery
     Connection = dmdConexao.FDConnection1
     SQL.Strings = (
       'select *'
       'from customer')
     Left = 40
-    Top = 48
-    object FDQuery1CUST_NO: TIntegerField
+    Top = 40
+    object qryClienteCUST_NO: TIntegerField
       FieldName = 'CUST_NO'
       Origin = 'CUST_NO'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
-    object FDQuery1CUSTOMER: TStringField
+    object qryClienteCUSTOMER: TStringField
       FieldName = 'CUSTOMER'
       Origin = 'CUSTOMER'
       Required = True
       Size = 25
     end
-    object FDQuery1CONTACT_FIRST: TStringField
+    object qryClienteCONTACT_FIRST: TStringField
       FieldName = 'CONTACT_FIRST'
       Origin = 'CONTACT_FIRST'
       Size = 15
     end
-    object FDQuery1CONTACT_LAST: TStringField
+    object qryClienteCONTACT_LAST: TStringField
       FieldName = 'CONTACT_LAST'
       Origin = 'CONTACT_LAST'
     end
-    object FDQuery1PHONE_NO: TStringField
+    object qryClientePHONE_NO: TStringField
       FieldName = 'PHONE_NO'
       Origin = 'PHONE_NO'
     end
-    object FDQuery1ADDRESS_LINE1: TStringField
+    object qryClienteADDRESS_LINE1: TStringField
       FieldName = 'ADDRESS_LINE1'
       Origin = 'ADDRESS_LINE1'
       Size = 30
     end
-    object FDQuery1ADDRESS_LINE2: TStringField
+    object qryClienteADDRESS_LINE2: TStringField
       FieldName = 'ADDRESS_LINE2'
       Origin = 'ADDRESS_LINE2'
       Size = 30
     end
-    object FDQuery1CITY: TStringField
+    object qryClienteCITY: TStringField
       FieldName = 'CITY'
       Origin = 'CITY'
       Size = 25
     end
-    object FDQuery1STATE_PROVINCE: TStringField
+    object qryClienteSTATE_PROVINCE: TStringField
       FieldName = 'STATE_PROVINCE'
       Origin = 'STATE_PROVINCE'
       Size = 15
     end
-    object FDQuery1COUNTRY: TStringField
+    object qryClienteCOUNTRY: TStringField
       FieldName = 'COUNTRY'
       Origin = 'COUNTRY'
       Size = 15
     end
-    object FDQuery1POSTAL_CODE: TStringField
+    object qryClientePOSTAL_CODE: TStringField
       FieldName = 'POSTAL_CODE'
       Origin = 'POSTAL_CODE'
       Size = 12
     end
-    object FDQuery1ON_HOLD: TStringField
+    object qryClienteON_HOLD: TStringField
       FieldName = 'ON_HOLD'
       Origin = 'ON_HOLD'
       FixedChar = True

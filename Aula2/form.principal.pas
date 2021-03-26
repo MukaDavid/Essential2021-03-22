@@ -9,6 +9,10 @@ uses
 type
   TOperacao = (opAdicao, opSubtracao, opDivisao, opMultiplicacao);
 
+  TProcExecucao = reference to procedure;
+  TProcAntesDeExecutar = reference to procedure;
+
+
   TfrmMenuPrincipal = class(TForm)
     btnDataHora: TButton;
     edtVisor: TEdit;
@@ -17,17 +21,20 @@ type
     rdgOperacoes: TRadioGroup;
     btnCalculo: TButton;
     btnCalcularNovo: TButton;
+    Button1: TButton;
     procedure btnDataHoraClick(Sender: TObject);
     procedure btnSomarClick(Sender: TObject);
     procedure edtValorKeyPress(Sender: TObject; var Key: Char);
     procedure btnCalculoClick(Sender: TObject);
     procedure btnCalcularNovoClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     FResultado: Double;
     { Private declarations }
   public
     procedure ExibirDataHora;
     procedure Calcular(pOperacao: TOperacao);
+    procedure CalcularExecutar(pOperacao: TOperacao; pProcAntesDeExecutar: TProcAntesDeExecutar; pProc: TProcExecucao);
     function PegarValor: double;
     { Public declarations }
   end;
@@ -87,6 +94,22 @@ begin
   edtValor.Text := '0';
 end;
 
+procedure TfrmMenuPrincipal.Button1Click(Sender: TObject);
+begin
+  CalcularExecutar(TOperacao(rdgOperacoes.ItemIndex),
+    procedure
+    begin
+      ShowMessage('Ainda não executei');
+    end,
+    procedure
+    begin
+      edtVisor.Text := FloatToStr(FResultado);
+      ShowMessage('Executei');
+    end);
+
+
+end;
+
 procedure TfrmMenuPrincipal.Calcular(pOperacao: TOperacao);
 begin
   case pOperacao of
@@ -97,6 +120,19 @@ begin
   else
     FResultado := 0;
   end;
+end;
+
+procedure TfrmMenuPrincipal.CalcularExecutar(pOperacao: TOperacao;
+  pProcAntesDeExecutar: TProcAntesDeExecutar; pProc: TProcExecucao);
+begin
+  if Assigned(pProcAntesDeExecutar)  then
+    pProcAntesDeExecutar;
+
+  Calcular(pOperacao);
+
+  if Assigned(pProc) then
+    pProc;
+
 end;
 
 procedure TfrmMenuPrincipal.edtValorKeyPress(Sender: TObject; var Key: Char);
