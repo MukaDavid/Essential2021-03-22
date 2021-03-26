@@ -35,7 +35,6 @@ type
   private
     { Private declarations }
   public
-    procedure AbrirCadastro( )
     { Public declarations }
   end;
 
